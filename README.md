@@ -31,3 +31,5 @@ _manager.stateBlock = ^(int number){
        NSLog(@"%d",number);
        [weakSelf BLEStateInt:number];
 };
+
+大家可以查看我的简书文字,哪里有更为详细的讲解:http://www.jianshu.com/p/6e079da2370c
