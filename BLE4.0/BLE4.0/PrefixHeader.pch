@@ -1,0 +1,62 @@
+//
+//  PrefixHeader.pch
+//  BLE4.0
+//
+//  Created by Longma on 17/8/25.
+//  Copyright © 2017年 Bozonn. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//屏幕比例
+#define SCREEN_WIDTH_Size ([UIScreen mainScreen].bounds.size.width)/375
+#define SCREEN_HEIGHT_Size ([UIScreen mainScreen].bounds.size.height)/667
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define ButtonHeigth 39.0f
+#define WeakSelf __weak typeof(self) weakSelf = self;
+//蓝牙连接状态的定义
+#define kCONNECTED_UNKNOWN_STATE @"未知蓝牙状态"
+#define kCONNECTED_RESET         @"蓝牙重置"
+#define kCONNECTED_UNSUPPORTED   @"该设备不支持蓝牙"
+#define kCONNECTED_UNAUTHORIZED  @"未授权蓝牙权限"
+#define kCONNECTED_POWERED_OFF   @"蓝牙已关闭"
+#define kCONNECTED_POWERD_ON     @"蓝牙已打开"
+#define kCONNECTED_ERROR         @"未知的蓝牙错误"
+
+
+#ifdef DEBUG
+#define kDLOG(FORMAT, ...) fprintf(stderr,"%s: %d\t  %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
+
+#define NSLog(...)  NSLog(@"\n%s \n %d行\n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+#else
+
+#define kDLOG(...)
+#define NSLog(...)
+#endif
+
+
+
+/**
+ 设备名称
+ */
+#define PMServiceName @"Bozonn-Air01"
+/**
+ 设备UUID
+ */
+#define PMServiceUUID @"FFE0"
+/**
+ 设备配置UUID
+ */
+#define PMServiceUUID_Config @"00002902-0000-1000-8000-00805f9b34fb"
+/**
+ 设备读取UUID
+ */
+#define PMServiceUUID_Receive @"0000ffe1-0000-1000-8000-00805f9b34fb"
+/**
+ 设备写入UUID
+ */
+#define PMServiceUUID_Send @"0000ffe1-0000-1000-8000-00805f9b34fb"
+
+#endif /* PrefixHeader_pch */
