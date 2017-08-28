@@ -43,10 +43,10 @@
 - (void)BluetoothConnection{
     WeakSelf;
     _manager = [[BLEModel alloc]init];
-    _manager.BLEName = @"Bozonn-Air01";
-    _manager.BLEServiceID = @"FFE0";
-    _manager.BLEServiceReadID = @"0000ffe1-0000-1000-8000-00805f9b34fb";
-    _manager.BLEServiceWriteID = @"0000ffe1-0000-1000-8000-00805f9b34fb";
+    _manager.BLEName = PMServiceName;
+    _manager.BLEServiceID = PMServiceUUID;
+    _manager.BLEServiceReadID = PMServiceUUID_Receive;
+    _manager.BLEServiceWriteID = PMServiceUUID_Send;
     _manager.linkBlcok = ^(NSString *state){
         
         NSLog(@"%@",state);
